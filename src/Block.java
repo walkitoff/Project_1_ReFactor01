@@ -30,7 +30,7 @@ public class Block {
         //loop checks for multiple of 2,  10 and 14 are examples of even#'s that are not accepted.
         while( num != 1 ){
             if((num % 2) != 0 || lstItems.size() < 2){
-                System.out.println("[ERROR] lstItem's size is not multiple of 2...");
+                System.out.println("\n[ERROR] lstItem's size is not multiple of 2...");
                 System.out.println("...Exiting Program.");
                 System.exit(0);
             }
