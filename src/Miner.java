@@ -1,19 +1,16 @@
 import java.util.ArrayList;
 
-
 /**
  * This class runs on separate thread and manages the transaction queue and Block mining.
  */
 public class Miner implements Runnable{
 
-
     public static volatile P2PMessageQueue oIncomingMessageQueue = new P2PMessageQueue();
 
     public static volatile boolean bAbortPoW = false;
     public static volatile ArrayList<String> lstTransactionPool = new ArrayList<>();
-    int iBlockTxSize = 4;
+    int iBlockTxSize = 10;  //change this to alter req transactions for mining to start.
     public String sUsername;
-
 
 
     /**
@@ -39,7 +36,7 @@ public class Miner implements Runnable{
                 return false;
             }
             else{
-                oBlock.setNonce("" + iNonce); //update value for sNonce
+                oBlock.setNonce(String.valueOf(iNonce)); //update value for sNonce
                 oBlock.setHash(oBlock.computeHash());
 
                 if(oBlock.getHash().startsWith(sDifficulty)){
