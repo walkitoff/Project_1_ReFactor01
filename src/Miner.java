@@ -9,7 +9,7 @@ public class Miner implements Runnable{
 
     public static volatile boolean bAbortPoW = false;
     public static volatile ArrayList<String> lstTransactionPool = new ArrayList<>();
-    int iBlockTxSize = 10;  //change this to alter req transactions for mining to start.
+    int iBlockTxSize = 8;  //change this to alter req transactions for mining to start.
     public String sUsername;
 
 
